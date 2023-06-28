@@ -11,16 +11,16 @@ typedef struct Vec2f {
     float y;
 } Vec2f;
 
-Vec2f vec2f_add(const Vec2f* vec1, const Vec2f* vec2);
-Vec2f vec2f_sub(const Vec2f* vec1, const Vec2f* vec2);
-Vec2f vec2f_mul(const Vec2f* vec1, const Vec2f* vec2);
-Vec2f vec2f_div(const Vec2f* vec1, const Vec2f* vec2);
-float vec2f_dot(const Vec2f* vec1, const Vec2f* vec2);
-Vec2f vec2f_scal_mul(const Vec2f* vec, float scalar);
-Vec2f vec2f_scal_div(const Vec2f* vec, float scalar);
-float vec2f_len(const Vec2f* vec);
-float vec2f_len_sq(const Vec2f* vec);
-Vec2f vec2f_normalized(const Vec2f* vec);
+Vec2f vec2f_add(Vec2f vec1, Vec2f vec2);
+Vec2f vec2f_sub(Vec2f vec1, Vec2f vec2);
+Vec2f vec2f_mul(Vec2f vec1, Vec2f vec2);
+Vec2f vec2f_div(Vec2f vec1, Vec2f vec2);
+float vec2f_dot(Vec2f vec1, Vec2f vec2);
+Vec2f vec2f_scal_mul(Vec2f vec, float scalar);
+Vec2f vec2f_scal_div(Vec2f vec, float scalar);
+float vec2f_len(Vec2f vec);
+float vec2f_len_sq(Vec2f vec);
+Vec2f vec2f_normalized(Vec2f vec);
 
 
 ///// General math /////
@@ -41,70 +41,70 @@ int clamp_d(int value, int a, int b);
 
 ///// Vec2f implementation /////
 
-Vec2f vec2f_add(const Vec2f* vec1, const Vec2f* vec2)
+Vec2f vec2f_add(Vec2f vec1, Vec2f vec2)
 {
     return (Vec2f){ 
-        .x = vec1->x + vec2->x,
-        .y = vec1->y + vec2->y
+        .x = vec1.x + vec2.x,
+        .y = vec1.y + vec2.y
     };
 }
 
-Vec2f vec2f_sub(const Vec2f* vec1, const Vec2f* vec2)
+Vec2f vec2f_sub(Vec2f vec1, Vec2f vec2)
 {
     return (Vec2f){ 
-        .x = vec1->x - vec2->x,
-        .y = vec1->y - vec2->y
+        .x = vec1.x - vec2.x,
+        .y = vec1.y - vec2.y
     };
 }
 
-Vec2f vec2f_mul(const Vec2f* vec1, const Vec2f* vec2)
+Vec2f vec2f_mul(Vec2f vec1, Vec2f vec2)
 {
     return (Vec2f){ 
-        .x = vec1->x * vec2->x,
-        .y = vec1->y * vec2->y
+        .x = vec1.x * vec2.x,
+        .y = vec1.y * vec2.y
     };
 }
 
-Vec2f vec2f_div(const Vec2f* vec1, const Vec2f* vec2)
+Vec2f vec2f_div(Vec2f vec1, Vec2f vec2)
 {
     return (Vec2f){ 
-        .x = vec1->x / vec2->x,
-        .y = vec1->y / vec2->y
+        .x = vec1.x / vec2.x,
+        .y = vec1.y / vec2.y
     };
 }
 
-float vec2f_dot(const Vec2f* vec1, const Vec2f* vec2)
+float vec2f_dot(Vec2f vec1, Vec2f vec2)
 {
-    return vec1->x * vec2->x + vec1->y * vec2->y;
+    return vec1.x * vec2.x + vec1.y * vec2.y;
 }
 
-Vec2f vec2f_scal_mul(const Vec2f* vec1, float scalar)
+Vec2f vec2f_scal_mul(Vec2f vec, float scalar)
 {
     return (Vec2f){
-        .x = vec1->x * scalar,
-        .y = vec1->y * scalar
+        .x = vec.x * scalar,
+        .y = vec.y * scalar
     };
 }
 
-Vec2f vec2f_scal_div(const Vec2f* vec1, float scalar)
+Vec2f vec2f_scal_div(Vec2f vec, float scalar)
 {
     return (Vec2f){
-        .x = vec1->x / scalar,
-        .y = vec1->y / scalar
+        .x = vec.x / scalar,
+        .y = vec.y / scalar
     };
 }
 
-float vec2f_len(const Vec2f* vec)
+float vec2f_len(Vec2f vec)
 {
-    return sqrt(vec->x * vec->x + vec->y * vec->y);
+    return sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
-float vec2f_len_sq(const Vec2f* vec)
+float vec2f_len_sq(Vec2f vec)
 {
-    return vec->x * vec->x + vec->y * vec->y;
+    return vec.x * vec.x + vec.y * vec.y;
 }
 
-Vec2f vec2f_normalized(const Vec2f* vec)
+Vec2f vec2f_normalized(Vec2f vec)
 {
     return vec2f_scal_div(vec, vec2f_len(vec));
 }
