@@ -6,6 +6,10 @@ int max_i(int a, int b);
 float max_f(float a, float b);
 double max_d(double a, double b);
 
+int min_i(int a, int b);
+float min_f(float a, float b);
+double min_d(double a, double b);
+
 #ifndef C_TOOLS_IMPLEMENTATION
 #define C_TOOLS_IMPLEMENTATION
 
@@ -22,6 +26,21 @@ float max_f(float a, float b)
 double max_d(double a, double b)
 {
     return a < b ? b : a;
+}
+
+int min_i(int a, int b)
+{
+    return a > b ? b : a;
+}
+
+float min_f(float a, float b)
+{
+    return a > b ? b : a;
+}
+
+double min_d(double a, double b)
+{
+    return a > b ? b : a;
 }
 
 #endif // C_TOOLS_IMPLEMENTATION
