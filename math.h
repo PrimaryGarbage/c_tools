@@ -11,16 +11,16 @@ typedef struct Vec2f {
     float y;
 } Vec2f;
 
-inline Vec2f vec2f_add(const Vec2f* vec1, const Vec2f* vec2);
-inline Vec2f vec2f_sub(const Vec2f* vec1, const Vec2f* vec2);
-inline Vec2f vec2f_mul(const Vec2f* vec1, const Vec2f* vec2);
-inline Vec2f vec2f_div(const Vec2f* vec1, const Vec2f* vec2);
-inline float vec2f_dot(const Vec2f* vec1, const Vec2f* vec2);
-inline Vec2f vec2f_scal_mul(const Vec2f* vec, float scalar);
-inline Vec2f vec2f_scal_div(const Vec2f* vec, float scalar);
-inline float vec2f_len(const Vec2f* vec);
-inline float vec2f_len_sq(const Vec2f* vec);
-inline Vec2f vec2f_normalized(const Vec2f* vec);
+Vec2f vec2f_add(const Vec2f* vec1, const Vec2f* vec2);
+Vec2f vec2f_sub(const Vec2f* vec1, const Vec2f* vec2);
+Vec2f vec2f_mul(const Vec2f* vec1, const Vec2f* vec2);
+Vec2f vec2f_div(const Vec2f* vec1, const Vec2f* vec2);
+float vec2f_dot(const Vec2f* vec1, const Vec2f* vec2);
+Vec2f vec2f_scal_mul(const Vec2f* vec, float scalar);
+Vec2f vec2f_scal_div(const Vec2f* vec, float scalar);
+float vec2f_len(const Vec2f* vec);
+float vec2f_len_sq(const Vec2f* vec);
+Vec2f vec2f_normalized(const Vec2f* vec);
 
 
 ///// General math /////
