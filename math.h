@@ -106,7 +106,7 @@ float vec2f_len_sq(const Vec2f* vec)
 
 Vec2f vec2f_normalized(const Vec2f* vec)
 {
-    return vec2f_scal_div(vec2f_len(vec));
+    return vec2f_scal_div(vec, vec2f_len(vec));
 }
 
 ///// General math implementation /////
