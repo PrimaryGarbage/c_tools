@@ -10,6 +10,10 @@ int min_i(int a, int b);
 float min_f(float a, float b);
 double min_d(double a, double b);
 
+int clamp_i(int value, int a, int b);
+int clamp_f(int value, int a, int b);
+int clamp_d(int value, int a, int b);
+
 #ifndef C_TOOLS_IMPLEMENTATION
 #define C_TOOLS_IMPLEMENTATION
 
@@ -41,6 +45,21 @@ float min_f(float a, float b)
 double min_d(double a, double b)
 {
     return a > b ? b : a;
+}
+
+int clamp_i(int value, int a, int b)
+{
+    return max_i(min_i(value, b), a);
+}
+
+int clamp_f(int value, int a, int b)
+{
+    return max_f(min_f(value, b), a);
+}
+
+int clamp_d(int value, int a, int b)
+{
+    return max_d(min_d(value, b), a);
 }
 
 #endif // C_TOOLS_IMPLEMENTATION
