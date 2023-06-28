@@ -39,7 +39,7 @@ int clamp_d(int value, int a, int b);
 
 Vector2f vec2f_add(const Vector2f* vec1, const Vector2f* vec2)
 {
-    return { 
+    return (Vector2f){ 
         .x = vec1->x + vec2->x,
         .y = vec1->y + vec2->y
     };
@@ -47,7 +47,7 @@ Vector2f vec2f_add(const Vector2f* vec1, const Vector2f* vec2)
 
 Vector2f vec2f_sub(const Vector2f* vec1, const Vector2f* vec2)
 {
-    return { 
+    return (Vector2f){ 
         .x = vec1->x - vec2->x,
         .y = vec1->y - vec2->y
     };
@@ -55,7 +55,7 @@ Vector2f vec2f_sub(const Vector2f* vec1, const Vector2f* vec2)
 
 Vector2f vec2f_mul(const Vector2f* vec1, const Vector2f* vec2)
 {
-    return { 
+    return (Vector2f){ 
         .x = vec1->x * vec2->x,
         .y = vec1->y * vec2->y
     };
@@ -63,7 +63,7 @@ Vector2f vec2f_mul(const Vector2f* vec1, const Vector2f* vec2)
 
 Vector2f vec2f_div(const Vector2f* vec1, const Vector2f* vec2)
 {
-    return { 
+    return (Vector2f){ 
         .x = vec1->x / vec2->x,
         .y = vec1->y / vec2->y
     };
@@ -76,7 +76,7 @@ float vec2f_dot(const Vector2f* vec1, const Vector2f* vec2)
 
 Vector2f vec2f_scal_mul(const Vector2f* vec1, float scalar)
 {
-    return {
+    return (Vector2f){
         .x = vec1->x * scalar,
         .y = vec1->y * scalar
     };
@@ -84,7 +84,7 @@ Vector2f vec2f_scal_mul(const Vector2f* vec1, float scalar)
 
 Vector2f vec2f_scal_div(const Vector2f* vec1, float scalar)
 {
-    return {
+    return (Vector2f){
         .x = vec1->x / scalar,
         .y = vec1->y / scalar
     };
