@@ -9,11 +9,6 @@ typedef struct Vector2f {
     float y;
 } Vector2f;
 
-///////////////////
-
-
-///// Vector2f functions /////
-
 Vector2f vec2f_add(const Vector2f* vec1, const Vector2f* vec2);
 Vector2f vec2f_sub(const Vector2f* vec1, const Vector2f* vec2);
 Vector2f vec2f_mul(const Vector2f* vec1, const Vector2f* vec2);
