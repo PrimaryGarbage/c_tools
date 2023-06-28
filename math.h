@@ -32,8 +32,7 @@ int clamp_i(int value, int a, int b);
 int clamp_f(int value, int a, int b);
 int clamp_d(int value, int a, int b);
 
-#ifndef C_TOOLS_IMPLEMENTATION
-#define C_TOOLS_IMPLEMENTATION
+#ifdef C_TOOLS_IMPLEMENTATION
 
 ///// Vector2f implementation /////
 
